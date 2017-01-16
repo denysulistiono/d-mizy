@@ -1,15 +1,4 @@
 <?php
-
-session_start();
-ini_set("display_errors",0);
-$user = $_SESSION['login'];
-	if  ($user ==""){
-	echo "<script>
-		window.location = '../index.php';
-		</script>";
-	}	
-?>
-<?php
 	include('koneksi.php');
 	$id = $_GET['id'];
 	$show = mysql_query("SELECT * FROM mobil WHERE kode_mobil ='$id'");
