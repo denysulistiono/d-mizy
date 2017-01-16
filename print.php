@@ -19,6 +19,7 @@ session_start();
                     <th align="left">Type</th>
                     <th align="left">Warna</th>
                     <th align="left">Harga</th>
+                    <th align="left">Contact</th>
                     <th align="left">Gambar</th>
 					
     </tr>
@@ -46,6 +47,7 @@ session_start();
 							<td>'.$data['type'].'</td>
                             <td>'.$data['warna'].'</td>
                             <td>'.$data['harga_mobil'].'</td>
+                            <td>'.$data['contact'].'</td>
                             <td>'.$data['gambar'].'</td>
 							
 							';

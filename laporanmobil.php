@@ -43,7 +43,7 @@ Email	 	 : hakkobiorichard[at]gmail.com
 			  </div>
                 
                  <div class="table-responsive">
-			<table class="table table-hover">
+			<table class="table table-hover" border="1">
 				<tr class="active">
                     <th>No</th>
 					<th>kode_mobil</th>
@@ -51,6 +51,7 @@ Email	 	 : hakkobiorichard[at]gmail.com
                     <th>type</th>
 					<th>warna</th>
                     <th>harga_mobil</th>
+                    <th>Contact</th>
                     <th>gambar</th>
                 
 				</tr>
@@ -78,6 +79,7 @@ Email	 	 : hakkobiorichard[at]gmail.com
 							<td>'.$data['type'].'</td>
 							<td>'.$data['warna'].'</td>
                             <td>'.$data['harga_mobil'].'</td>
+                            <td>'.$data['contact'].'</td>
                             <td>'.$data['gambar'].'</td>
 							';
 							

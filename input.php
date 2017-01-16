@@ -7,6 +7,7 @@
 				<a href ="home.php"> Halaman Awal</a> |
 				<a href ="input.php"> Menu Input</a> |
     			<a href ="arsip.php">Menu Arsip</a> |
+                <a href ="laporan.php">Laporan <a> |
                 <a href="../logout.php">Logout</a>  
                 
  <br><br><br><br>
