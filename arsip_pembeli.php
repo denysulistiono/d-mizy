@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+ini_set("display_errors",0);
+$user = $_SESSION['login'];
+	if  ($user ==""){
+	echo "<script>
+		window.location = '../index.php';
+		</script>";
+	}	
+?>
 <html> 
 <head><title>LAPORAN INPUT PEMBELI</title> 
 </head> 
@@ -6,7 +17,6 @@
 <h1 align="center" >Arsip Pembeli</h1>
 <br>
 <form method="POST" action="">
-    <table>
 	<tr>
 	<center>
 				<td>
@@ -27,7 +37,7 @@
 				<td></td>
 				<td><input type="submit" name="bcari" value="Cari"></td>
 			</tr>
-        </table>
+		</center>
 		</form>
 <table border="1" align="center" class="zebra">
 <thead>
@@ -47,7 +57,7 @@
    if (isset($_POST['bcari'])) { 
 		$tcari = $_POST['tcari'];
 		$kategori = $_POST['kategori'];
-	$query = mysql_query("SELECT  pembeli.KTP, pembeli.nama_pembeli, pembeli.alamat_pembeli, pembeli.telp_pembeli from pembeli 
+	$query = mysql_query("SELECT  pembeli.KTP, pembeli.nama_pembeli , pembeli.alamat_pembeli, pembeli.telp_pembeli from pembeli 
 				 where $kategori Like'%$tcari%' 
 				 ORDER BY KTP") or die(mysql_error());
 		}else{
@@ -57,21 +67,24 @@
 		echo '<tr><td colspan="6"> Tidak ada data!</td></tr>';
 	}else{
     $no = 1;
-    while($row = mysql_fetch_assoc($query)){
+    while($data = mysql_fetch_assoc($query)){
 		echo '<tr>';
 					echo '<td>'.$no.'</td>';	
-					echo '<td>'.$row['KTP'].'</td>';	
-					echo '<td>'.$row['nama_pembeli'].'</td>';	
-					echo '<td>'.$row['alamat_pembeli'].'</td>';	
-					echo '<td>'.$row['telp_pembeli'].'</td>';
-		echo '<td><a href="edit_pembeli.php?kode='.$row['KTP'].'">Edit</a> / ><a href="hapus_pembeli.php?kode=<?'.$row['KTP'].'" onclick="return confirm(\'Yakin?\')">Hapus</a></td>';	//menampilkan link edit dan hapus dimana tiap link terdapat GET id -> ?id=siswa_id
+					echo '<td>'.$data['KTP'].'</td>';	
+					echo '<td>'.$data['nama_pembeli'].'</td>';	
+					echo '<td>'.$data['alamat_pembeli'].'</td>';	
+					echo '<td>'.$data['telp_pembeli'].'</td>';
+					echo '<td><a href="edit_pembeli.php?id='.$data['KTP'].'">Edit</a> / <a href="hapus_pembeli.php?id='.$data['KTP'].'" onclick="return confirm(\'Yakin?\')">Hapus</a></td>';
+					
 				echo '</tr>';
 				$no++;
-        }
+		}
+		
 	}
 ?>
+ </form>
    </table>
   <p align="center"><a href="arsip.php"> <<Back</a></p>
-</form>
+
    </body>
    </html>

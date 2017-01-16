@@ -1,4 +1,14 @@
+<?php
 
+session_start();
+ini_set("display_errors",0);
+$user = $_SESSION['login'];
+	if  ($user ==""){
+	echo "<script>
+		window.location = '../index.php';
+		</script>";
+	}	
+?>
 <head>
 <!--
 Project      : Data Karyawan CRUD MySQLi (Create, read, Update, Delete) PHP, MySQLi dan Bootstrap
@@ -36,22 +46,22 @@ Email	 	 : hakkobiorichard[at]gmail.com
 			<h2>&nbsp;</h2>
 			<form class="form-inline" method="POST">
 				<div class="form-group">
-					<h2>Laporan Data Film</h2>
+					<h2>Laporan Data Pembeli</h2>
                     <p><a href="printpembeli.php" target="_blank" class="btn btn-primary" role="button">
                     <span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print Laporan
                     </a></p> 
 			  </div>
                 
                  <div class="table-responsive">
-			<table class="table table-hover">
+			<table class="table table-hover" border="1" >
 				<tr class="active">
                     <th>No</th>
 					<th>KTP</th>
-					<th>nama pembeli</th>
-                    <th>alamat pembeli</th>
-					<th>telepon pembeli</th>
+					<th>Nama Pembeli</th>
+                    <th>Alamat Pembeli</th>
+					<th>Telepon Pembeli</th>
 				</tr>
-				<?php
+                <?php
 		include('koneksi.php');
 		
 			

@@ -1,4 +1,14 @@
+<?php
 
+session_start();
+ini_set("display_errors",0);
+$user = $_SESSION['login'];
+	if  ($user ==""){
+	echo "<script>
+		window.location = '../index.php';
+		</script>";
+	}	
+?>
 <head>
 <!--
 Project      : Data Karyawan CRUD MySQLi (Create, read, Update, Delete) PHP, MySQLi dan Bootstrap

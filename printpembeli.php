@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+ini_set("display_errors",0);
+$user = $_SESSION['login'];
+	if  ($user ==""){
+	echo "<script>
+		window.location = '../index.php';
+		</script>";
+	}	
+?>
 <?php 
 session_start();
 ?>
@@ -15,9 +26,9 @@ session_start();
     <tr>
       <th align="left">No</th>
 					<th align="left">KTP</th>
-					<th align="left">nama pembeli</th>
-                    <th align="left">alamat pembeli</th>
-                    <th align="left">telepon pembeli</th>
+					<th align="left">Nama Pembeli</th>
+                    <th align="left">Alamat Pembeli</th>
+                    <th align="left">Telepon Pembeli</th>
                    					
     </tr>
 <?php

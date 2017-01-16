@@ -1,4 +1,15 @@
 <?php
+
+session_start();
+ini_set("display_errors",0);
+$user = $_SESSION['login'];
+	if  ($user ==""){
+	echo "<script>
+		window.location = '../index.php';
+		</script>";
+	}	
+?>
+<?php
 include "koneksi.php";
 
 if (isset($_POST['Input'])) {
